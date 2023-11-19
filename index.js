@@ -35,3 +35,6 @@ app.post('/api/notes', (req, res) => {
 
 
 
+app.listen(port, () => {
+  console.log(` App listening on port ${port}`)
+})
