@@ -6,7 +6,7 @@ var signinRouter = require("./routes/signin");
 var homeRouter = require("./routes/home");
 var noteRouter = require('./routes/notes');
 const app = express()
-const port = 4000
+const port = process.env.PORT || 4000;
 app.use(express.json())
 app.use(cors({origin:"*"}))
 app.use("/account",signinRouter);
@@ -36,5 +36,5 @@ app.post('/api/notes', (req, res) => {
 
 
 app.listen(port, () => {
-  console.log(` App listening on port ${port}`)
+  console.log(`App listening on port ${port}`)
 })
